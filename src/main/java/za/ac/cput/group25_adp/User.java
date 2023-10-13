@@ -2,9 +2,7 @@ package za.ac.cput.group25_adp;
 
 import java.io.Serializable;
 
-public class Users {
-    
-    public class User implements Serializable
+public class User implements Serializable
     {
         private String fstName;
         private String lstName;
@@ -77,6 +75,4 @@ public class Users {
         //Temporary to string method.
         return ID + ", " + fstName + ", " + lstName;
     }
-    }
-    
 }
