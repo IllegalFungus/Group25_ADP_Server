@@ -10,14 +10,16 @@ public class Course implements Serializable{
     String courseID;
     String courseTitle;
     String courseFaculty;
+    String function;
 
     public Course() {
     }
 
-    public Course(String courseID, String courseTitle, String courseFaculty) {
+    public Course(String courseID, String courseTitle, String courseFaculty, String function) {
         this.courseID = courseID;
         this.courseTitle = courseTitle;
         this.courseFaculty = courseFaculty;
+        this.function = function;
     }
 
     public String getCourseID() {
@@ -43,6 +45,16 @@ public class Course implements Serializable{
     public void setCourseFaculty(String courseFaculty) {
         this.courseFaculty = courseFaculty;
     }
+    
+    public String getFunction() {
+        return function;
+    }
+
+    public void setFunction(String courseFaculty) {
+        this.function = function;
+    }
+    
+    
 
     @Override
     public String toString() {
