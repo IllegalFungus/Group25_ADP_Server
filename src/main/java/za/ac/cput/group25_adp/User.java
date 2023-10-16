@@ -9,11 +9,13 @@ public class User implements Serializable
         private String Password;
         private int ID;
         private boolean isAdmin;
+        private String Function;
     
-    public User(int ID, String password)
+    public User(int ID, String password, String function)
     {
         this.ID = ID;
         this.Password = password;
+        this.Function = function;
     }
     
     public User(int ID, String pass, String name, String surname, boolean isAdmin)
@@ -63,6 +65,16 @@ public class User implements Serializable
     public void setPass()
     {
         this.Password = Password;
+    }
+    
+    public String getFunction()
+    {
+        return Function;
+    }
+    
+    public void setFunction()
+    {
+        this.Function = Function;
     }
     
     public Boolean isAdmin()

@@ -63,20 +63,21 @@ public class ClientServer_Server {
                     {
                         //Code for if the Server recieved a User's information.
                         User newUser = (User) receivedObject;
-                        
-                        Login = dao.Login(newUser);
-                        if (Login != null)
-                        {
-                            JOptionPane.showMessageDialog(null, "User, " + Login.getUserFName()
-                                + " " + Login.getUserLName() + " is successfully logged in!");
-                            try
+                        if (newUser.getFunction().equals("Login")) {
+                            Login = dao.Login(newUser);
+                            if (Login != null)
                             {
-                                out.writeObject(Login);
-                                out.flush();
-                            }
-                            catch (IOException ioe)
-                            {
-                                System.out.println("IO Exception: " + ioe.getMessage());
+                                JOptionPane.showMessageDialog(null, "User, " + Login.getUserFName()
+                                    + " " + Login.getUserLName() + " is successfully logged in!");
+                                try
+                                {
+                                    out.writeObject(Login);
+                                    out.flush();
+                                }
+                                catch (IOException ioe)
+                                {
+                                    System.out.println("IO Exception: " + ioe.getMessage());
+                                }
                             }
                         }
                     } else if (receivedObject instanceof String && ((String) receivedObject).equals("exit"))
